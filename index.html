@@ -133,13 +133,18 @@
             border: 2px dashed var(--primary);
         }
 
+        /* ✅ QR CODE PIX: menor, centralizado e harmonico (sem mexer no seu layout) */
         .qr-code-img {
-            max-width: 200px;
+            width: 160px;           /* tamanho menor e consistente */
+            max-width: 100%;
             height: auto;
-            margin: 15px 0;
-            border: 1px solid #ddd;
+            display: block;
+            margin: 16px auto 6px;  /* centraliza e dá respiro */
             padding: 10px;
             background: #fff;
+            border-radius: 14px;
+            border: 1px solid rgba(0,0,0,0.08);
+            box-shadow: 0 10px 24px rgba(0,0,0,0.10);
         }
 
         .form-container {
@@ -167,9 +172,29 @@
             margin-top: 50px;
         }
 
+        /* ✅ Mobile funcionando: melhora hero e ajuste do QR no celular */
         @media (max-width: 768px) {
             .hero h1 { font-size: 2rem; }
             nav ul { display: none; }
+
+            /* melhora visual no mobile sem mudar o layout do desktop */
+            .hero {
+                height: auto;
+                padding: 70px 18px;
+            }
+
+            section {
+                padding: 60px 18px;
+            }
+
+            .card-pix {
+                padding: 22px;
+            }
+
+            .qr-code-img {
+                width: 140px; /* um pouco menor no celular */
+                margin-top: 14px;
+            }
         }
     </style>
 </head>
@@ -206,4 +231,18 @@
             <div class="card-pix">
                 <h3>Escaneie o QR Code</h3>
                 <p>Aponte a câmera do seu celular para doar via PIX:</p>
-                <img src="WhatsApp Image 2026-02-09 at 23.05.46.jpeg" alt="">
+
+                <!-- ✅ Só mudamos aqui: class + alt (pra ficar certo e responsivo) -->
+                <img src="WhatsApp Image 2026-02-09 at 23.05.46.jpeg" class="qr-code-img" alt="QR Code PIX para doação">
+            </div>
+
+           
+    </section>
+
+    <footer>
+        <p><strong>Resgautte</strong> - Amor em Adoção e Cuidados</p>
+        <p>©️ 2026 - Todos os direitos reservados.</p>
+    </footer>
+
+</body>
+</html>
